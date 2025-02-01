@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Welcome to Motion Educare Public School
+                Welcome to Motion Educare School
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Nurturing minds, building character, and shaping futures through
