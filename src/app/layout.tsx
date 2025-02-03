@@ -14,9 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Motion Educare School",
-  description: "Motion Educare School",
-  keywords: "Motion Educare School, Motion, Educare, School",
+  title: "Motion Educare School - Quality Learning for Bright Futures",
+  description:
+    "Motion Educare School provides top-quality education with experienced faculty, interactive learning, and a student-centric approach. Enroll today for a brighter future!",
+  keywords:
+    "Motion Educare School, best school, quality education, top school, student success, academic excellence, interactive learning, mentoring, student-centered approach, motion, notion educare, motion school",
+  icons: "/images/logo.jpeg",
 };
 
 export default function RootLayout({
