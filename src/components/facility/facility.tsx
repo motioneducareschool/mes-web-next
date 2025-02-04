@@ -111,7 +111,7 @@ const FacilitiesAndSports = () => {
 
   const hostelFeatures = [
     {
-      title: "accommodation",
+      title: "Accommodation",
       icon: <Home className="h-8 w-8 text-blue-600" />,
       features: [
         "Separate wings for boys and girls",
@@ -124,7 +124,7 @@ const FacilitiesAndSports = () => {
     },
 
     {
-      title: "dining",
+      title: "Dining",
       icon: <User className="h-6 w-6 text-green-600" />,
       features: [
         "Nutritious vegetarian meals",
@@ -136,7 +136,7 @@ const FacilitiesAndSports = () => {
       color: "bg-green-50",
     },
     {
-      title: "security",
+      title: "Security",
       icon: <ShieldCheck className="h-6 w-6 text-red-600" />,
       features: [
         "24/7 security personnel",
