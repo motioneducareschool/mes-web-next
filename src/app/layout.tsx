@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Motion Educare School - Quality Learning for Bright Futures",
+  title: "Motion Educare School",
   description:
     "Motion Educare School provides top-quality education with experienced faculty, interactive learning, and a student-centric approach. Enroll today for a brighter future!",
   keywords:
