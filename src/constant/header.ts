@@ -16,7 +16,7 @@ export const navigationItems = [
   {
     name: "Contact Us",
     icon: Phone,
-    path: "/",
+    path: "/contact",
     active: false,
   },
   //   {

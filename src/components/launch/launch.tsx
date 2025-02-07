@@ -1,10 +1,9 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import confetti from "canvas-confetti";
 import { useEffect } from "react";
-import { FaPhone } from "react-icons/fa6";
+import { socialLinks } from "@/constant/social-links";
 
 const LaunchPage = () => {
   const runConfetti = () => {
@@ -144,28 +143,7 @@ const LaunchPage = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          {[
-            {
-              icon: <FaWhatsapp />,
-              link: "https://whatsapp.com/channel/0029VaJXXO3C1FuHMwsygc2i",
-            },
-            {
-              icon: <FaYoutube />,
-              link: "https://www.youtube.com/@motioneducareschool",
-            },
-            {
-              icon: <FaPhone />,
-              link: "tel:+917461038138",
-            },
-            {
-              icon: <FaFacebook />,
-              link: "https://www.facebook.com/motioneducare.motioneducare",
-            },
-            {
-              icon: <FaInstagram />,
-              link: "https://www.instagram.com/motion_educare_school",
-            },
-          ].map((social, i) => (
+          {socialLinks.map((social, i) => (
             <Link href={social.link} target="_blank" key={i}>
               <motion.div
                 whileHover={{ scale: 1.1 }}

@@ -36,8 +36,8 @@ export function Header() {
   };
 
   return (
-    <>
-      <div className="mx-auto top-0 z-50 max-w-screen-2xl">
+    <div className="bg-white sticky top-0 z-50">
+      <div className="mx-auto  max-w-screen-2xl ">
         <div className="flex justify-between px-4 items-center  h-[3.75rem] ">
           <Link href={`/`} onClick={() => handleLinkClick("Home")}>
             <div className="flex gap-1 justify-center items-center">
@@ -47,9 +47,7 @@ export function Header() {
                 width={50}
                 height={50}
               />
-              <p className="text-2xl font-bold">
-                Motion Educare School
-              </p>
+              <p className="text-2xl font-bold">Motion Educare School</p>
             </div>
           </Link>
 
@@ -60,7 +58,7 @@ export function Header() {
                 href={item.path}
                 key={i}
                 onClick={() => handleLinkClick(item.name)}
-                className={`flex items-center hover:text-blue-800  gap-1 hover:underline px-4 py-2 rounded-lg ${
+                className={`flex items-center hover:text-blue-800  gap-1 px-4 py-2 rounded-lg ${
                   item.active ? "text-blue-800" : ""
                 } `}
               >
@@ -90,6 +88,6 @@ export function Header() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
