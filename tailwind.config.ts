@@ -72,11 +72,32 @@ export default {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
+  			},
+  			shine: {
+  				'0%': {
+  					'background-position': '0% 0%'
+  				},
+  				'50%': {
+  					'background-position': '100% 100%'
+  				},
+  				to: {
+  					'background-position': '0% 0%'
+  				}
+  			},
+  			'background-position-spin': {
+  				'0%': {
+  					backgroundPosition: 'top center'
+  				},
+  				'100%': {
+  					backgroundPosition: 'bottom center'
+  				}
   			}
   		},
   		animation: {
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			shine: 'shine var(--duration) infinite linear',
+  			'background-position-spin': 'background-position-spin 3000ms infinite alternate'
   		}
   	}
   },

@@ -5,6 +5,7 @@ import confetti from "canvas-confetti";
 import { useEffect } from "react";
 import { socialLinks } from "@/constant/social-links";
 import Image from "next/image";
+import { ShineBorder } from "../magicui/shine-border";
 
 const LaunchPage = () => {
   const runConfetti = () => {
@@ -78,12 +79,20 @@ const LaunchPage = () => {
             whileTap={{ scale: 0.95 }}
             className="group relative mb-12 cursor-pointer"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-green-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-            <div className="relative bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 shadow-2xl">
+            {/* <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-green-500 rounded-2xl blur transition duration-500"></div> */}
+
+            <ShineBorder
+              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-cyan-400/30 transition-all"
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+            >
               <div className="flex flex-col items-center">
                 <motion.div
                   animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="mb-4 text-4xl"
                 >
                   ⏳
@@ -95,7 +104,7 @@ const LaunchPage = () => {
                   <span className="text-cyan-300 text-xl">🎯 March 2025</span>
                 </div>
               </div>
-            </div>
+            </ShineBorder>
           </motion.div>
 
           {/* Features Grid */}
@@ -103,23 +112,23 @@ const LaunchPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="grid md:grid-cols-3 gap-8 mb-12 w-full max-w-4xl"
+            className="grid md:grid-cols-3 gap-8 mb-12 w-full max-w-5xl"
           >
             {[
               {
-                icon: "📚",
-                title: "Digital Learning",
-                text: "Interactive study materials and resources",
+                icon: "🏫",
+                title: "Stay Connected",
+                text: "Bridging the gap between parents, students, and teachers through digital updates.",
               },
               {
-                icon: "⏰",
-                title: "Smart Timetable",
-                text: "Real-time schedule updates and notifications",
+                icon: "📢",
+                title: "Important School Updates",
+                text: "Get notified about holidays, exam schedules, and fee reminders instantly.",
               },
               {
-                icon: "📈",
-                title: "Progress Tracking",
-                text: "Detailed academic performance analytics",
+                icon: "🎓",
+                title: "Future Ready Education",
+                text: "Preparing for a seamless transition to smart classrooms and e-learning resources.",
               },
             ].map((feature, i) => (
               <motion.div
