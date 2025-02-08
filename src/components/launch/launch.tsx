@@ -55,7 +55,7 @@ const LaunchPage = () => {
             className="mb-8 text-center"
           >
             <div className="flex gap-2 justify-center items-center">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 tracking-wide">
                 Motion Educare School
               </h1>
               <motion.span
@@ -67,7 +67,7 @@ const LaunchPage = () => {
               </motion.span>
             </div>
 
-            <p className="text-cyan-200 text-lg mt-2 font-light">
+            <p className="text-cyan-200 text-lg mt-2 tracking-wider">
               Redefining Education Since 2021
             </p>
           </motion.div>
