@@ -4,6 +4,7 @@ import Link from "next/link";
 import confetti from "canvas-confetti";
 import { useEffect } from "react";
 import { socialLinks } from "@/constant/social-links";
+import Image from "next/image";
 
 const LaunchPage = () => {
   const runConfetti = () => {
@@ -28,11 +29,20 @@ const LaunchPage = () => {
           <motion.div
             initial={{ rotateY: 180, opacity: 0 }}
             animate={{ rotateY: 0, opacity: 1 }}
+            whileHover={{ scale: 0.95, rotate: 2 }}
             transition={{ duration: 1, type: "spring" }}
             className="mb-8"
           >
-            <div className="w-32 h-32 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center border-2 border-cyan-300 shadow-lg shadow-cyan-500/20">
-              <span className="text-4xl">🎓</span>
+            <div className="relative w-32 h-32 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center border-2  shadow-lg shadow-cyan-500/20">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-green-500 rounded-full blur opacity-50 group-hover:opacity-70 transition duration-500"></div>
+              <Image
+                src="/images/logo.jpeg"
+                alt="logo"
+                className="absolute object-cover inset-0 rounded-full"
+                fill
+                // width={50}
+                // height={50}
+              />
             </div>
           </motion.div>
 
