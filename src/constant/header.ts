@@ -4,13 +4,13 @@ export const navigationItems = [
   {
     name: "Home",
     icon: Home,
-    path: "/",
+    path: "/h",
     active: false,
   },
   {
     name: "About",
     icon: User2,
-    path: "/",
+    path: "/about",
     active: false,
   },
   {

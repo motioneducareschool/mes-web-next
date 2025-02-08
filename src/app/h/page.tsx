@@ -89,35 +89,41 @@ export default function Home() {
               {
                 age: "2-5 Years",
                 program: "Play School",
+                link: "/school/play-school",
                 color: "bg-pink-500",
               },
               {
                 age: "6-10 Years",
                 program: "Primary School",
+                link: "/school/primary-school",
                 color: "bg-blue-500",
               },
               {
                 age: "11-14 Years",
                 program: "Middle School",
+                link: "/school/middle-school",
                 color: "bg-green-500",
               },
               {
                 age: "15-18 Years",
                 program: "Senior School",
+                link: "/school/senior-school",
                 color: "bg-purple-500",
               },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className={`${item.color} text-white p-8 rounded-2xl text-center shadow-lg`}
-              >
-                <h3 className="text-2xl font-bold mb-2">{item.program}</h3>
-                <p className="opacity-90">{item.age}</p>
-                <div className="mt-4 text-4xl">
-                  {["🎨", "📚", "🔬", "🎓"][i]}
-                </div>
-              </motion.div>
+              <Link href={item.link} key={i + "program12"}>
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.05 }}
+                  className={`${item.color} text-white p-8 rounded-2xl text-center shadow-lg`}
+                >
+                  <h3 className="text-2xl font-bold mb-2">{item.program}</h3>
+                  <p className="opacity-90">{item.age}</p>
+                  <div className="mt-4 text-4xl">
+                    {["🎨", "📚", "🔬", "🎓"][i]}
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

@@ -18,6 +18,13 @@ const quickLinks = [
   },
   { title: "Hostel", icon: "🏠", link: "/hostel", color: "text-orange-600" },
   { title: "Fees", icon: "💰", link: "/fees", color: "text-amber-600" },
+  { title: "Careers", icon: "👩💼", link: "/careers", color: "text-cyan-600" },
+  {
+    title: "Transport",
+    icon: "🚌",
+    link: "/transport",
+    color: "text-lime-600",
+  },
   { title: "Gallery", icon: "📸", link: "/gallery", color: "text-pink-600" },
   { title: "Results", icon: "📈", link: "/results", color: "text-emerald-600" },
   {
@@ -27,13 +34,6 @@ const quickLinks = [
     color: "text-indigo-600",
   },
   { title: "Calendar", icon: "📅", link: "/calendar", color: "text-red-600" },
-  { title: "Careers", icon: "👩💼", link: "/careers", color: "text-cyan-600" },
-  {
-    title: "Transport",
-    icon: "🚌",
-    link: "/transport",
-    color: "text-lime-600",
-  },
   { title: "Contact", icon: "📞", link: "/contact", color: "text-rose-600" },
   { title: "Alumni", icon: "👨🎓", link: "/alumni", color: "text-violet-600" },
   { title: "Library", icon: "📖", link: "/library", color: "text-sky-600" },
