@@ -61,8 +61,8 @@ export function Header() {
                 href={item.path}
                 key={i}
                 onClick={() => handleLinkClick(item.name)}
-                className={`flex items-center hover:text-yellow-300 gap-1 px-4 py-2 rounded-lg transition duration-300 ${
-                  item.active ? "text-yellow-300 font-semibold" : "text-white"
+                className={`flex items-center hover:text-orange-500 gap-1 px-4 py-2 rounded-lg transition duration-300 ${
+                  item.active ? "text-orange-500 font-semibold" : "text-white"
                 }`}
               >
                 <item.icon className="" />
@@ -81,8 +81,8 @@ export function Header() {
               href={item.path}
               key={i}
               onClick={() => handleLinkClick(item.name)}
-              className={`flex flex-col items-center hover:text-yellow-300 justify-center px-2 py-2 transition duration-300 ${
-                item.active ? "text-yellow-300" : "text-white"
+              className={`flex flex-col items-center hover:text-orange-500 justify-center px-2 py-2 transition duration-300 ${
+                item.active ? "text-orange-500" : "text-white"
               }`}
             >
               <item.icon />

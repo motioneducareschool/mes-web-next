@@ -42,7 +42,7 @@ const notices = [
 
 export function NoticeBoard() {
   return (
-    <div className="h-[500px] bg-white rounded-xl shadow-lg p-6 border border-blue-50">
+    <div className="max-h-[550px] bg-white rounded-xl shadow-lg p-6 border border-blue-50">
       <h2 className="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
         <span className="bg-blue-100 p-2 rounded-lg">📢</span>
         Latest Notices

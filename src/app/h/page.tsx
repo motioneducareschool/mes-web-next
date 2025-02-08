@@ -174,14 +174,14 @@ export default function Home() {
               className="relative h-96 rounded-3xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/images/hero1.jpeg"
+                src="/images/our-campus.jpeg"
                 alt="Campus View"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 flex items-end p-6">
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 flex items-end p-6">
                 <h3 className="text-white text-2xl font-bold">Our Campus</h3>
-              </div>
+              </div> */}
             </motion.div>
 
             <div className="grid grid-cols-2 gap-4">

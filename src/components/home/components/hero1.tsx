@@ -15,7 +15,7 @@ const HeroCarousel = () => {
       description:
         "Nurturing young minds from Playgroup to Class XII with CBSE excellence",
       ctaText: "Explore Curriculum",
-      image: "/images/hero1.jpeg",
+      image: "/images/hero-main.jpeg",
       emblem: "🎓",
       bgGradient: "from-blue-900/90 to-emerald-900/50",
     },
@@ -24,7 +24,7 @@ const HeroCarousel = () => {
       subtitle: "Home Away From Home",
       description: "Secure hostel facilities with modern amenities & 24/7 care",
       ctaText: "View Hostels",
-      image: "/images/hero2.jpeg",
+      image: "/images/hero-dev.jpeg",
       emblem: "🏡",
       bgGradient: "from-amber-900/90 to-rose-900/50",
     },
@@ -33,7 +33,7 @@ const HeroCarousel = () => {
       subtitle: "Exam Preparation",
       description: "Specialized coaching for Sainik, Navodaya, and NTSE exams",
       ctaText: "See Programs",
-      image: "/images/hero3.jpeg",
+      image: "/images/hero-comp.jpeg",
       emblem: "🎯",
       bgGradient: "from-green-900/90 to-cyan-900/50",
     },
@@ -42,16 +42,16 @@ const HeroCarousel = () => {
       subtitle: "Qualified Mentors",
       description: "25+ experienced educators with proven track records",
       ctaText: "Meet Faculty",
-      image: "/images/hero4.jpeg",
+      image: "/images/hero-faculty.jpeg",
       emblem: "👩🏫",
       bgGradient: "from-purple-900/90 to-pink-900/50",
     },
     {
-      title: "All-Round Development",
+      title: "All Round Development",
       subtitle: "Beyond Academics",
       description: "Sports, arts, and leadership programs for holistic growth",
       ctaText: "View Facilities",
-      image: "/images/hero5.jpeg",
+      image: "/images/hero-all.jpeg",
       emblem: "🏆",
       bgGradient: "from-red-900/90 to-orange-900/50",
     },
@@ -73,7 +73,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-[95vh] overflow-hidden">
+    <div className="relative md:min-h-[93vh] min-h-[83vh] overflow-hidden">
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
           key={currentSlide}
@@ -100,22 +100,22 @@ const HeroCarousel = () => {
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="max-w-2xl text-white space-y-6"
+                  className="max-w-2xl text-white space-y-2"
                 >
                   <div className="text-6xl mb-4">
                     {slides[currentSlide].emblem}
                   </div>
-                  <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                  <h1 className="text-3xl md:text-6xl font-bold leading-tight">
                     {slides[currentSlide].title}
                   </h1>
                   <motion.div
                     initial={{ x: -20 }}
                     animate={{ x: 0 }}
-                    className="text-3xl text-orange-300 font-semibold"
+                    className="text-xl md:text-2xl text-orange-300 font-semibold"
                   >
                     {slides[currentSlide].subtitle}
                   </motion.div>
-                  <p className="text-xl md:text-2xl leading-relaxed max-w-xl">
+                  <p className="text-base md:text-xl leading-relaxed max-w-xl">
                     {slides[currentSlide].description}
                   </p>
                   <motion.div
@@ -124,7 +124,7 @@ const HeroCarousel = () => {
                   >
                     <Button
                       size="lg"
-                      className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6 rounded-full shadow-lg"
+                      className="bg-orange-500 hover:bg-orange-600 text-white md:text-lg px-4 py-2 rounded-full shadow-lg"
                     >
                       {slides[currentSlide].ctaText}
                     </Button>
