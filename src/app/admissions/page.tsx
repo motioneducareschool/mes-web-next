@@ -18,7 +18,7 @@ export default function AdmissionPage() {
             Admissions 2024-25
           </h1>
           <p className="text-xl text-gray-600">
-            Begin your child's journey towards excellence
+           {` Begin your child's journey towards excellence`}
           </p>
         </motion.div>
 
