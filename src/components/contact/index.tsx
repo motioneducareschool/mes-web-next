@@ -194,13 +194,13 @@ export default function ContactPage() {
               className="h-96 rounded-2xl overflow-hidden border-2 border-white"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.125850274466!2d77.49023331507805!3d28.450414582483273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea64d8f258a5%3A0x6e67546e9a6650f8!2sKnowledge%20Park%20III%2C%20Greater%20Noida%2C%20Uttar%20Pradesh%20201310!5e0!3m2!1sen!2sin!4v1625645678900!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2107.210087550446!2d85.66803216155546!3d25.21541925278429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f25ff5d32b4b4b%3A0x66e7351365367eb8!2sMotion%20Educare%20school%20%2C%20Kaila%20-%20Benar%20more%20In%20Bind%20Road%2C%20Asthawan%2C%20Nalanda-803107!5e0!3m2!1sen!2sin!4v1739641075590!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 className="border-0"
                 allowFullScreen
                 loading="lazy"
-              />
+              ></iframe>
             </motion.div>
 
             {/* Quick Contact Section */}
