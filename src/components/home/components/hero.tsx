@@ -1,94 +1,175 @@
 "use client";
-import React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-
-const carouselData = [
-  {
-    id: 1,
-    image: "/images/hero1.jpeg",
-  },
-  {
-    id: 2,
-    image: "/images/hero2.jpeg",
-  },
-  {
-    id: 3,
-    image: "/images/hero3.jpeg",
-  },
-  {
-    id: 4,
-    image: "/images/hero4.jpeg",
-  },
-  // Add more items as needed
-];
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const HeroCarousel = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % carouselData.length);
-  };
+  const slides = [
+    {
+      title: "Motion Educare School",
+      subtitle: "Holistic Education",
+      description:
+        "Nurturing young minds from Playgroup to Class XII with CBSE excellence",
+      ctaText: "Explore Curriculum",
+      image: "/images/hero-main.jpeg",
+      emblem: "🎓",
+      bgGradient: "from-blue-900/90 to-emerald-900/50",
+    },
+    {
+      title: "Residential Excellence",
+      subtitle: "Home Away From Home",
+      description: "Secure hostel facilities with modern amenities & 24/7 care",
+      ctaText: "View Hostels",
+      image: "/images/hero-dev.jpeg",
+      emblem: "🏡",
+      bgGradient: "from-amber-900/90 to-rose-900/50",
+    },
+    {
+      title: "Competitive Edge",
+      subtitle: "Exam Preparation",
+      description: "Specialized coaching for Sainik, Navodaya, and NTSE exams",
+      ctaText: "See Programs",
+      image: "/images/hero-comp.jpeg",
+      emblem: "🎯",
+      bgGradient: "from-green-900/90 to-cyan-900/50",
+    },
+    {
+      title: "Expert Faculty",
+      subtitle: "Qualified Mentors",
+      description: "25+ experienced educators with proven track records",
+      ctaText: "Meet Faculty",
+      image: "/images/hero-faculty.jpeg",
+      emblem: "👩🏫",
+      bgGradient: "from-purple-900/90 to-pink-900/50",
+    },
+    {
+      title: "All Round Development",
+      subtitle: "Beyond Academics",
+      description: "Sports, arts, and leadership programs for holistic growth",
+      ctaText: "View Facilities",
+      image: "/images/hero-all.jpeg",
+      emblem: "🏆",
+      bgGradient: "from-red-900/90 to-orange-900/50",
+    },
+  ];
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + carouselData.length) % carouselData.length
-    );
-  };
-
-  React.useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
+  const navigate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrentSlide(
+      (prev) => (prev + newDirection + slides.length) % slides.length
+    );
+  };
+
   return (
-    <div className="relative w-full h-[40vh] overflow-hidden bg-gray-900 container m-auto">
-      {/* Main carousel container */}
-      <div className="relative w-full h-full">
-        {carouselData.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
-              index === currentSlide ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              layout="fill"
-              objectFit="cover"
-              alt={`Slide ${index + 1}`}
+    <div className="relative md:min-h-[93vh] min-h-[83vh] overflow-hidden">
+      <AnimatePresence mode="popLayout" custom={direction}>
+        <motion.div
+          key={currentSlide}
+          custom={direction}
+          initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <div className="relative h-full">
+            <div
+              className={`absolute inset-0 bg-gradient-to-r ${slides[currentSlide].bgGradient} z-10`}
             />
+            <img
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              className="w-full h-full object-cover object-center"
+            />
+
+            <div className="absolute inset-0 z-20 flex items-center">
+              <div className="container mx-auto px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="max-w-2xl text-white space-y-2"
+                >
+                  <div className="text-6xl mb-4">
+                    {slides[currentSlide].emblem}
+                  </div>
+                  <h1 className="text-3xl md:text-6xl font-bold leading-tight">
+                    {slides[currentSlide].title}
+                  </h1>
+                  <motion.div
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
+                    className="text-xl md:text-2xl text-orange-300 font-semibold"
+                  >
+                    {slides[currentSlide].subtitle}
+                  </motion.div>
+                  <p className="text-base md:text-xl leading-relaxed max-w-xl">
+                    {slides[currentSlide].description}
+                  </p>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button
+                      size="lg"
+                      className="bg-orange-500 hover:bg-orange-600 text-white md:text-lg px-4 py-2 rounded-full shadow-lg"
+                    >
+                      {slides[currentSlide].ctaText}
+                    </Button>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
           </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+        {slides.map((_, index) => (
+          <motion.button
+            key={index}
+            onClick={() => {
+              setDirection(index > currentSlide ? 1 : -1);
+              setCurrentSlide(index);
+            }}
+            whileHover={{ scale: 1.2 }}
+            className={`w-4 h-4 rounded-full transition-all ${
+              currentSlide === index
+                ? "bg-orange-500 scale-125 shadow-lg"
+                : "bg-white/50 hover:bg-white/70"
+            }`}
+          />
         ))}
-
-        {/* Navigation buttons */}
-        <div
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
-          onClick={prevSlide}
-        >
-          <ChevronLeft className="h-10 w-10" />
-        </div>
-
-        <div
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
-          onClick={nextSlide}
-        >
-          <ChevronRight className="h-10 w-10" />
-        </div>
-
-        {/* Slide indicators */}
-        {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-          {carouselData.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 ${
-                currentSlide === index ? "bg-white" : "bg-white/50"
-              }`}
-              onClick={() => setCurrentSlide(index)}
-            />
-          ))}
-        </div> */}
       </div>
+
+      {/* Arrow Navigation */}
+      {/* <motion.button
+        onClick={() => navigate(-1)}
+        whileHover={{ scale: 1.1 }}
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+      >
+        <ChevronLeft size={40} className="text-white/90 hover:text-white" />
+      </motion.button>
+      <motion.button
+        onClick={() => navigate(1)}
+        whileHover={{ scale: 1.1 }}
+        className="absolute right-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm"
+      >
+        <ChevronRight size={40} className="text-white/90 hover:text-white" />
+      </motion.button> */}
     </div>
   );
 };

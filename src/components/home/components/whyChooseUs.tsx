@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, GraduationCap, Home, ArrowRight } from "lucide-react";
 
+// NOT USED
 const WhyChooseUs = () => {
   // Hero section stats
   const stats = [

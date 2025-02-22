@@ -1,11 +1,31 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://motioneducareschool.in/launch",
-      lastModified: new Date().toISOString(),
-      priority: 1.0,
-    },
-  ];
+const baseUrl = "https://motioneducareschool.in";
+const staticRoutesData = ["/"];
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Static routes
+  const staticRoutes = staticRoutesData.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: route === "/" ? 1 : 0.8,
+  }));
+
+  // Dynamic routes - Example for courses
+  // Replace with your actual data fetching logic
+  // const courses = await fetch(`${baseUrl}/api/course`)
+  //   .then((res) => res.json())
+  //   .catch(() => []);
+
+  // const dynamicCourses = courses.map(
+  //   (course: { slug: string; updatedAt: string }) => ({
+  //     url: `/${course.slug}`,
+  //     lastModified: new Date(course.updatedAt),
+  //     changeFrequency: 'weekly' as const,
+  //     priority: 0.9,
+  //   })
+  // );
+
+  return [...staticRoutes];
 }

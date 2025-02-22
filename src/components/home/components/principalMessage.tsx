@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// components/PrincipalMessage.tsx
 export function PrincipalMessage() {
   return (
     <div className="max-h-[550px] bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl shadow-lg p-8 relative overflow-hidden">
