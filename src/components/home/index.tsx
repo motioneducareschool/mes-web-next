@@ -69,12 +69,12 @@ export default function HomePage() {
     <div className="bg-gray-50">
       <HeroCarousel />
 
-      <section className="container mx-auto px-4 py-16">
+      {/* <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-8">
           <PrincipalMessage />
           <NoticeBoard />
         </div>
-      </section>
+      </section> */}
 
       {/* Academic Programs */}
       <section className="py-20 bg-gradient-to-br from-blue-100 to-cyan-100">
