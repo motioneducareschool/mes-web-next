@@ -10,6 +10,7 @@ import { PrincipalMessage } from "@/components/home/components/principalMessage"
 import NavigationGrid from "@/components/navigation";
 import { Marquee } from "@/components/magicui/marquee";
 import { VideoGallery } from "@/components/youtubeVideo";
+import { reviewsData } from "@/constant/reviews";
 
 const FeatureCard = ({
   title,
@@ -66,7 +67,7 @@ export default function HomePage() {
   //     { title: "Auditorium", icon: "🎭", color: "bg-purple-100" },
   //   ]
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 font-medium">
       <HeroCarousel />
 
       {/* <section className="container mx-auto px-4 py-16">
@@ -84,7 +85,7 @@ export default function HomePage() {
             subtitle="Comprehensive programs for all age groups"
           />
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-6 ">
             {[
               {
                 age: "2-5 Years",
@@ -117,11 +118,15 @@ export default function HomePage() {
                   whileHover={{ scale: 1.05 }}
                   className={`${item.color} text-white p-8 rounded-2xl text-center shadow-lg`}
                 >
-                  <h3 className="text-2xl font-bold mb-2">{item.program}</h3>
-                  <p className="opacity-90">{item.age}</p>
                   <div className="mt-4 text-4xl">
                     {["🎨", "📚", "🔬", "🎓"][i]}
                   </div>
+                  <p className="opacity-90">{item.age}</p>
+                  <h3 className="text-2xl font-bold mb-2">{item.program}</h3>
+
+                  <Button variant={"outline"} className="mt-4 text-black">
+                    Explore More
+                  </Button>
                 </motion.div>
               </Link>
             ))}
@@ -228,57 +233,45 @@ export default function HomePage() {
           />
 
           <Marquee pauseOnHover className="[--duration:30s]">
-            {[1, 2, 3].map((i) => (
+            {reviewsData.slice(0, 5).map((item, i) => (
               <motion.div
-                key={i}
+                key={item.name + i + "es"}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 className="bg-white p-2 rounded-2xl max-w-[350px] border-[1px] border-sky-100"
               >
                 <div className="flex items-center gap-4 mb-1">
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                  {/* <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
                     {["👩", "👨", "👩"][i - 1]}
-                  </div>
+                  </div> */}
                   <div>
-                    <h4 className="font-bold">Mrs. Sharma</h4>
-                    <p className="text-sm text-gray-500">
-                      Parent of Class VIII Student
-                    </p>
+                    <h4 className="font-bold">{item.name}</h4>
+                    <p className="text-sm text-gray-500">{item.subtitle}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  {` The residential program transformed my child into a confident
-                  individual. The Sainik School preparation helped secure
-                  admission effortlessly.`}
-                </p>
+                <p className="text-gray-600 mb-4">{item.desc}</p>
               </motion.div>
             ))}
           </Marquee>
 
           <Marquee reverse pauseOnHover className="[--duration:30s]">
-            {[1, 2, 3].map((i) => (
+            {reviewsData.slice(5, 10).map((item, i) => (
               <motion.div
-                key={i}
+                key={item.name + i + "re"}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 className="bg-white p-2 rounded-2xl max-w-[350px] border-[1px] border-sky-100"
               >
                 <div className="flex items-center gap-4 mb-1">
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                  {/* <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white">
                     {["👩", "👨", "👩"][i - 1]}
-                  </div>
+                  </div> */}
                   <div>
-                    <h4 className="font-bold">Mrs. Sharma</h4>
-                    <p className="text-sm text-gray-500">
-                      Parent of Class VIII Student
-                    </p>
+                    <h4 className="font-bold">{item.name}</h4>
+                    <p className="text-sm text-gray-500">{item.subtitle}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  {` The residential program transformed my child into a confident
-                  individual. The Sainik School preparation helped secure
-                  admission effortlessly.`}
-                </p>
+                <p className="text-gray-600 mb-4">{item.desc}</p>
               </motion.div>
             ))}
           </Marquee>
