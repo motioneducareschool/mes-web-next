@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 const baseUrl = "https://motioneducareschool.in";
-const staticRoutesData = ["/"];
+const staticRoutesData = ["/", "/about", "/contact", "/admissions", "/fees"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes
