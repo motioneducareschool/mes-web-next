@@ -15,11 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Motion Educare School",
+  title: "Motion Educare School | Best CBSE School with Hostel Facility",
   description:
-    "Motion Educare School provides top-quality education with experienced faculty, interactive learning, and a student-centric approach. Enroll today for a brighter future!",
+    "Motion Educare School provides high-quality education from Playgroup to Class XII, including preparation for Sainik School and Navodaya exams. Admissions open!",
   keywords:
-    "Motion Educare School, best school, quality education, top school, student success, academic excellence, interactive learning, mentoring, student-centered approach, motion, notion educare, motion school",
+    "Motion Educare School, CBSE School, Best School with Hostel, Sainik School Preparation, Navodaya Exam Coaching best school, quality education, top school, student success, academic excellence, interactive learning, mentoring, student-centered approach, motion, notion educare, motion school",
+  robots: "index, follow",
   icons: "/images/logo.jpeg",
 };
 

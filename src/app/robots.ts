@@ -1,5 +1,5 @@
 // app/robots.ts
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,10 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/api", // Disallow all API routes
-          "/private/", // Example of other private routes (optional)
-        ],
+        disallow: ["/api", "/api/*", "/private", "/admin", "/dashboard"], // Add restricted routes
       },
     ],
     sitemap: "https://motioneducareschool.in/sitemap.xml",
