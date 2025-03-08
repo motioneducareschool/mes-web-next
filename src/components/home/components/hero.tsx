@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,7 +15,8 @@ const HeroCarousel = () => {
       subtitle: "Holistic Education",
       description:
         "Nurturing young minds from Playgroup to Class XII with CBSE excellence",
-      ctaText: "Explore Curriculum",
+      link: "/academics",
+      ctaText: "Explore Academics",
       image: "/images/hero-main.jpeg",
       emblem: "🎓",
       bgGradient: "from-blue-900/90 to-emerald-900/50",
@@ -23,6 +25,7 @@ const HeroCarousel = () => {
       title: "Residential Excellence",
       subtitle: "Home Away From Home",
       description: "Secure hostel facilities with modern amenities & 24/7 care",
+      link: "/hostel",
       ctaText: "View Hostels",
       image: "/images/hero-dev.jpeg",
       emblem: "🏡",
@@ -32,6 +35,7 @@ const HeroCarousel = () => {
       title: "Competitive Edge",
       subtitle: "Exam Preparation",
       description: "Specialized coaching for Sainik, Navodaya, and NTSE exams",
+      link: "/careers",
       ctaText: "See Programs",
       image: "/images/hero-comp.jpeg",
       emblem: "🎯",
@@ -42,6 +46,7 @@ const HeroCarousel = () => {
       subtitle: "Qualified Mentors",
       description: "25+ experienced educators with proven track records",
       ctaText: "Meet Faculty",
+      link: "/about",
       image: "/images/hero-faculty.jpeg",
       emblem: "👩🏫",
       bgGradient: "from-purple-900/90 to-pink-900/50",
@@ -50,6 +55,7 @@ const HeroCarousel = () => {
       title: "All Round Development",
       subtitle: "Beyond Academics",
       description: "Sports, arts, and leadership programs for holistic growth",
+      link: "/facilities",
       ctaText: "View Facilities",
       image: "/images/hero-all.jpeg",
       emblem: "🏆",
@@ -122,12 +128,14 @@ const HeroCarousel = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button
-                      size="lg"
-                      className="bg-orange-500 hover:bg-orange-600 text-white md:text-lg px-4 py-2 rounded-full shadow-lg"
-                    >
-                      {slides[currentSlide].ctaText}
-                    </Button>
+                    <Link href={slides[currentSlide].link}>
+                      <Button
+                        size="lg"
+                        className="bg-orange-500 hover:bg-orange-600 text-white md:text-lg px-4 py-2 rounded-full shadow-lg"
+                      >
+                        {slides[currentSlide].ctaText}
+                      </Button>
+                    </Link>
                   </motion.div>
                 </motion.div>
               </div>

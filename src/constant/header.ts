@@ -16,9 +16,9 @@ export const navigationItems = [
     active: false,
   },
   {
-    name: "Hostel",
-    icon: "🏠",
-    path: "/hostel",
+    name: "Facilities",
+    icon: "🌳🚌",
+    path: "/facilities",
     color: "text-orange-600",
     active: false,
   },

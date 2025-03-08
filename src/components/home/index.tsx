@@ -12,6 +12,7 @@ import { Marquee } from "@/components/magicui/marquee";
 import { VideoGallery } from "@/components/youtubeVideo";
 import { reviewsData } from "@/constant/reviews";
 import AcademicProgram from "../academics/components/academic-program";
+import FacilitiesSection from "../facility/facility";
 
 const FeatureCard = ({
   title,
@@ -110,6 +111,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto px-4">
+        <FacilitiesSection />
+      </div>
 
       <NavigationGrid />
       {/* Campus Highlights */}
