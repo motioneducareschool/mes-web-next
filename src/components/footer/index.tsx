@@ -112,7 +112,8 @@ export function Footer() {
             © {new Date().getFullYear()} Motion Educare School. All rights
             reserved. | Developed by{" "}
             <Link
-              href="https:deepcore.in"
+              href="https://deepcore.in"
+              target="_blank"
               className="hover:text-blue-500 font-medium underline"
             >
               DeepCore
