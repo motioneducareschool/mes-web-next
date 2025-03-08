@@ -110,7 +110,13 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-center">
             © {new Date().getFullYear()} Motion Educare School. All rights
-            reserved.
+            reserved. | Developed by{" "}
+            <Link
+              href="https:deepcore.in"
+              className="hover:text-blue-500 font-medium underline"
+            >
+              DeepCore
+            </Link>
           </div>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-blue-400">
