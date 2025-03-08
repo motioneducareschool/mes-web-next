@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function AdmissionPage() {
   return (
@@ -18,7 +20,7 @@ export default function AdmissionPage() {
             Admissions 2024-25
           </h1>
           <p className="text-xl text-gray-600">
-           {` Begin your child's journey towards excellence`}
+            {` Begin your child's journey towards excellence`}
           </p>
         </motion.div>
 
@@ -78,9 +80,11 @@ export default function AdmissionPage() {
                 </div>
               </div>
             </div>
-            <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700">
-              View Complete Fee Structure
-            </Button>
+            <Link href="/fees">
+              <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700">
+                View Complete Fee Structure
+              </Button>
+            </Link>
           </motion.div>
         </div>
 
@@ -148,30 +152,29 @@ export default function AdmissionPage() {
             className=" bg-blue-900 text-white rounded-2xl shadow-lg p-6"
           >
             <h2 className="text-2xl font-bold mb-4">Contact Admissions</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold mb-2">Address</h3>
-                <p>
-                  Knowledge Park III
-                  <br />
-                  Greater Noida, UP 201310
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Phone</h3>
-                <p>
-                  +91 98765 43210
-                  <br />
-                  +91 12345 67890
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Email</h3>
-                <p>
-                  admissions@motioneducare.com
-                  <br />
-                  info@motioneducare.com
-                </p>
+            <div className="space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-1 text-blue-400" />
+                  <address className="not-italic">
+                    Kaila - Benar More Asthawan, Nalanda Bihar 803107
+                  </address>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-blue-400" />
+                  <a href="tel:+917461038138" className="hover:text-blue-400">
+                    +91 74610 38138
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-blue-400" />
+                  <a
+                    href="mailto:motioneducareschool@gmail.com"
+                    className="hover:text-blue-400"
+                  >
+                    motioneducareschool@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -11,6 +11,7 @@ import NavigationGrid from "@/components/navigation";
 import { Marquee } from "@/components/magicui/marquee";
 import { VideoGallery } from "@/components/youtubeVideo";
 import { reviewsData } from "@/constant/reviews";
+import AcademicProgram from "../academics/components/academic-program";
 
 const FeatureCard = ({
   title,
@@ -77,62 +78,8 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      {/* Academic Programs */}
-      <section className="py-20 bg-gradient-to-br from-blue-100 to-cyan-100">
-        <div className="container mx-auto px-4">
-          <SectionHeader
-            title="Our Academic Spectrum"
-            subtitle="Comprehensive programs for all age groups"
-          />
+      <AcademicProgram />
 
-          <div className="grid md:grid-cols-4 gap-6 ">
-            {[
-              {
-                age: "2-5 Years",
-                program: "Play School",
-                link: "/school/play-school",
-                color: "bg-pink-500",
-              },
-              {
-                age: "6-10 Years",
-                program: "Primary School",
-                link: "/school/primary-school",
-                color: "bg-blue-500",
-              },
-              {
-                age: "11-14 Years",
-                program: "Middle School",
-                link: "/school/middle-school",
-                color: "bg-green-500",
-              },
-              {
-                age: "15-18 Years",
-                program: "Senior School",
-                link: "/school/senior-school",
-                color: "bg-purple-500",
-              },
-            ].map((item, i) => (
-              <Link href={item.link} key={i + "program12"}>
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className={`${item.color} text-white p-8 rounded-2xl text-center shadow-lg`}
-                >
-                  <div className="mt-4 text-4xl">
-                    {["🎨", "📚", "🔬", "🎓"][i]}
-                  </div>
-                  <p className="opacity-90">{item.age}</p>
-                  <h3 className="text-2xl font-bold mb-2">{item.program}</h3>
-
-                  <Button variant={"outline"} className="mt-4 text-black">
-                    Explore More
-                  </Button>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* Key Features */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">

@@ -42,7 +42,7 @@ export default function FeeStructure() {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-12 px-4 font-medium sm:text-lg">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,9 +53,13 @@ export default function FeeStructure() {
           </h1>
 
           <Tabs defaultValue="school" className="w-full">
-            <TabsList className="grid grid-cols-2 w-full max-w-xs mx-auto mb-8">
-              <TabsTrigger value="school">School Fees</TabsTrigger>
-              <TabsTrigger value="hostel">Hostel Fees</TabsTrigger>
+            <TabsList className="grid grid-cols-2 w-full max-w-xs mx-auto mb-8 ">
+              <TabsTrigger value="school" className="sm:text-lg">
+                School Fees
+              </TabsTrigger>
+              <TabsTrigger value="hostel" className="sm:text-lg">
+                Hostel Fees
+              </TabsTrigger>
             </TabsList>
 
             {/* School Fees Tab */}
@@ -69,7 +73,7 @@ export default function FeeStructure() {
                 <motion.div
                   initial={{ x: -50 }}
                   animate={{ x: 0 }}
-                  className="bg-white rounded-2xl shadow-lg p-6"
+                  className="bg-white rounded-2xl  p-6"
                 >
                   <h2 className="text-2xl font-bold mb-4 text-blue-900">
                     One-time Charges (Play Group to X)
@@ -98,7 +102,7 @@ export default function FeeStructure() {
                 <motion.div
                   initial={{ x: 50 }}
                   animate={{ x: 0 }}
-                  className="bg-white rounded-2xl shadow-lg p-6"
+                  className="bg-white rounded-2xl  p-6"
                 >
                   <h2 className="text-2xl font-bold mb-4 text-blue-900">
                     Monthly Tuition Fees
@@ -123,7 +127,7 @@ export default function FeeStructure() {
                 <motion.div
                   initial={{ scale: 0.95 }}
                   animate={{ scale: 1 }}
-                  className="bg-white rounded-2xl shadow-lg p-6"
+                  className="bg-white rounded-2xl  p-6"
                 >
                   <h2 className="text-2xl font-bold mb-4 text-blue-900">
                     Transportation Fees
@@ -151,7 +155,7 @@ export default function FeeStructure() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-2xl shadow-lg p-6 space-y-6"
+                className="bg-white rounded-2xl  p-6 space-y-6"
               >
                 <motion.div
                   initial={{ y: 20 }}
@@ -206,13 +210,13 @@ export default function FeeStructure() {
             animate={{ opacity: 1 }}
             className="text-center mt-8"
           >
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            {/* <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Download Complete Fee Structure
-            </Button>
+            </Button> */}
             <p className="text-gray-600 mt-4">
               For payment plans or queries, contact:
               <br />
-              admissions@motioneducare.com | +91 98765 43210
+              motioneducareschool@gmail.com | +91 74610 38138
             </p>
           </motion.div>
         </motion.div>

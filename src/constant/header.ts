@@ -1,45 +1,39 @@
-import { Home, Phone, User2 } from "lucide-react";
+import { Currency, Home, Phone, User2 } from "lucide-react";
 
 export const navigationItems = [
   {
     name: "Home",
-    icon: Home,
-    path: "/h",
+    icon: "🏫",
+    path: "/",
+    color: "text-blue-600",
     active: false,
   },
   {
-    name: "About",
-    icon: User2,
-    path: "/about",
+    name: "Academics",
+    icon: "📚",
+    path: "/academics",
+    color: "text-green-600",
     active: false,
   },
   {
-    name: "Contact Us",
-    icon: Phone,
+    name: "Hostel",
+    icon: "🏠",
+    path: "/hostel",
+    color: "text-orange-600",
+    active: false,
+  },
+  {
+    name: "Careers",
+    icon: "💼",
+    path: "/careers",
+    color: "text-cyan-600",
+    active: false,
+  },
+  {
+    name: "Contact",
+    icon: "📞",
     path: "/contact",
+    color: "text-rose-600",
     active: false,
   },
-  //   {
-  //     name: "Fee Structure",
-  //     icon: Currency,
-  //     path: "/fee-structure",
-  //     active: false,
-  //   },
-  // {
-  //   name: 'Faculties',
-  //   icon: BsPeople,
-  //   path: '/faculties',
-  // },
-  //   {
-  //     name: "Achivers",
-  //     icon: User2,
-  //     path: "/achivers",
-  //     active: false,
-  //   },
-  //   {
-  //     name: "Gallery",
-  //     icon: GalleryThumbnails,
-  //     path: "/gallery",
-  //     active: false,
-  //   },
 ];

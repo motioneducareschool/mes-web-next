@@ -48,7 +48,7 @@ export function Header() {
                 width={40}
                 height={40}
               />
-              <p className="sm:text-3xl text-2xl font-extrabold bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent shadow-md hover:shadow-xl transition duration-300">
+              <p className="sm:text-3xl md:hidden lg:block block  text-2xl font-extrabold text-white shadow-md hover:shadow-xl transition duration-300">
                 Motion Educare School
               </p>
             </div>
@@ -61,12 +61,12 @@ export function Header() {
                 href={item.path}
                 key={i}
                 onClick={() => handleLinkClick(item.name)}
-                className={`flex items-center hover:text-orange-500 gap-1 px-4 py-2 rounded-lg transition duration-300 ${
+                className={`flex items-center hover:text-orange-500 gap-2 px-4 py-2 rounded-lg transition duration-300 ${
                   item.active ? "text-orange-500 font-semibold" : "text-white"
                 }`}
               >
-                <item.icon className="" />
-                {item.name}
+                <p>{item.icon}</p>
+                <p>{item.name}</p>
               </Link>
             ))}
           </div>
@@ -85,7 +85,7 @@ export function Header() {
                 item.active ? "text-orange-500" : "text-white"
               }`}
             >
-              <item.icon />
+              <p>{item.icon}</p>
               <p className="text-[12px]">{item.name}</p>
             </Link>
           ))}

@@ -37,7 +37,8 @@ const quickLinks = [
   { title: "Contact", icon: "📞", link: "/contact", color: "text-rose-600" },
   { title: "Alumni", icon: "👨🎓", link: "/alumni", color: "text-violet-600" },
   { title: "Library", icon: "📖", link: "/library", color: "text-sky-600" },
-  { title: "Events", icon: "🎪", link: "/events", color: "text-fuchsia-600" },
+  // { title: "Events", icon: "🎪", link: "/events", color: "text-fuchsia-600" },
+  { title: "Labs", icon: "🔬", link: "/labs", color: "text-fuchsia-600" },
 ];
 
 export default function NavigationGrid() {
@@ -89,9 +90,9 @@ export default function NavigationGrid() {
         {/* Additional Quick Action Bar */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
           {[
-            { title: "Downloads", icon: "📥", link: "/downloads" },
-            { title: "Parent Portal", icon: "👨👩👧", link: "/parents" },
-            { title: "FAQs", icon: "❓", link: "/faqs" },
+            // { title: "Downloads", icon: "📥", link: "/downloads" },
+            // { title: "Parent Portal", icon: "👨👩👧", link: "/parents" },
+            { title: "Frequently Asked Questions", icon: "❓", link: "/faqs" },
           ].map((link, index) => (
             <motion.div
               key={index}

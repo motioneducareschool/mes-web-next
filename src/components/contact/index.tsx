@@ -27,12 +27,12 @@ export default function ContactPage() {
         animate={{ opacity: 1, y: 0 }}
         className="relative h-96 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-cyan-700/80">
-          <img
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600">
+          {/* <img
             src="/contact-bg.jpg"
             alt="Contact Background"
             className="w-full h-full object-cover mix-blend-multiply"
-          />
+          /> */}
         </div>
         <div className="relative z-10 flex items-center justify-center h-full text-center">
           <div className="space-y-4">
@@ -220,7 +220,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold">Admission Helpline</p>
-                    <p>+91 12345 67890</p>
+                    <p>+91 74610 38138</p>
                   </div>
                 </Link>
 
